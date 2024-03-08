@@ -53,8 +53,9 @@ while not valid_phone:
         print("Phone number accepted.")
         valid_phone = True
     
+valid_email = False
 
-
-    
-
-
+while not valid_email:
+    user_email = input('Please enter your email here: ')
+    if '@' in user_email:
+        valid_email = True
