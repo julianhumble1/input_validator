@@ -57,5 +57,24 @@ valid_email = False
 
 while not valid_email:
     user_email = input('Please enter your email here: ')
-    if '@' in user_email:
+    # Check for presence of a @ character
+    no_at = False
+    no_full_stop = False
+    if '@' not in user_email:
+        print("Email not accepted. Email address must include an '@' symbol")
+        no_at = True
+    else:
+        # input definitely includes a @ character
+        at_index = user_email.index('@')
+        # Check for full stop after the @ character
+        if '.' not in user_email[at_index:]:
+            no_full_stop = True
+            print("Email not accepted. Email domain must include a full stop ('.')")
+
+    if not (no_at or no_full_stop):
+        print('Email address accepted.')
         valid_email = True
+
+
+
+        
