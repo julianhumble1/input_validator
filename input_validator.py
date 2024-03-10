@@ -76,5 +76,33 @@ while not valid_email:
         valid_email = True
 
 
+# Password
+valid_password = False
 
-        
+while not valid_password:
+    user_password = input("Please enter a password. Password must include a capital letter and a number: ")
+    password_check = input("Please re-enter your password to confirm: ")
+
+    # check passwords entered match
+    non_match= False
+    if user_password != password_check:
+        print("Passwords must match. Please try again.")
+        non_match = True
+
+    # check there is a number in the password
+    no_number = False
+    if not any(char.isdigit() for char in user_password):
+        print("Password must contain a number. Please try again.")
+        no_number = True
+
+    # check there is a capital letter
+    no_capital = False
+    if not any(char.isupper() for char in user_password):
+        print("Password must contain a capital letter. Please try again.")
+        no_capital = True
+    
+    if not(non_match or no_number or no_capital):
+        print("Password accepted.")
+        valid_password = True
+
+    
