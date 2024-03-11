@@ -107,3 +107,9 @@ while not valid_password:
         valid_password = True
         
     
+print("You have provided the following details:")
+print(f"Name: {user_name} {user_surname}")
+print(f"Phone Number: {user_phone}")
+print(f"Email Address: {user_email}")
+hidden_password = ''.join(['*' for char in user_password])
+print(f"Password: {hidden_password}")
