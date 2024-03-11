@@ -101,6 +101,7 @@ while not valid_password:
         print("Password must contain a capital letter. Please try again.")
         no_capital = True
     
+    # if inputted password has a capital and a number, and both inputted passwords match, break out of while loop
     if not(non_match or no_number or no_capital):
         print("Password accepted.")
         valid_password = True
